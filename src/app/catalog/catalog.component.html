@@ -1,0 +1,21 @@
+<div class="catalog-container">
+  <mat-toolbar color="primary">
+    <span>Catálogo</span>
+  </mat-toolbar>
+
+  <div class="catalog-grid">
+    <mat-card *ngFor="let item of catalog" class="catalog-item">
+      <mat-card-header>
+        <mat-card-title>{{ item.title }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="item.image" alt="{{ item.title }}" />
+      <mat-card-content>
+        <p>{{ item.description }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="accent" (click)="likeItem(item.id)">Like</button>
+        <button mat-button color="warn" (click)="visitItem(item.id)">Visitar</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

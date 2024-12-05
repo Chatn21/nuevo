@@ -1,0 +1,47 @@
+<!-- src/app/components/register/register.component.html -->
+
+<div class="register-container">
+  <h2 mat-dialog-title>Registro de Usuario</h2>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Nombre</mat-label>
+      <input matInput id="nombre" formControlName="nombre" type="text" />
+      <mat-error *ngIf="registerForm.controls['nombre'].invalid && registerForm.controls['nombre'].touched">
+        El nombre es obligatorio.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Correo</mat-label>
+      <input matInput id="correo" formControlName="correo" type="email" />
+      <mat-error *ngIf="registerForm.controls['correo'].invalid && registerForm.controls['correo'].touched">
+        El correo es obligatorio y debe ser válido.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Teléfono</mat-label>
+      <input matInput id="telefono" formControlName="telefono" type="text" />
+      <mat-error *ngIf="registerForm.controls['telefono'].invalid && registerForm.controls['telefono'].touched">
+        El teléfono es obligatorio.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Contraseña</mat-label>
+      <input matInput id="password" formControlName="password" type="password" />
+      <mat-error *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched">
+        La contraseña es obligatoria y debe tener al menos 6 caracteres.
+      </mat-error>
+    </mat-form-field>
+
+    <div class="button-container">
+      <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Registrar</button>
+    </div>
+  </form>
+
+  <div *ngIf="errorMessage" class="error-message">
+    <mat-error>{{ errorMessage }}</mat-error>
+  </div>
+</div>
