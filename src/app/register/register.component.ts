@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
@@ -54,13 +54,19 @@ export class RegisterComponent {
     this.registerService.registerUser(formData).subscribe({
       next: (response) => {
         console.log('Usuario registrado:', response);
+        this.onRegisterSuccess();
         alert('Registro exitoso');
+
       },
       error: (error) => {
         console.error('Error en el registro:', error);
         this.errorMessage = error.error.message || 'Ocurrió un error al registrar el usuario.';
       }
     });
+  }
+  onRegisterSuccess() {
+    // Redirige al login utilizando window.location
+    window.location.href = '/login'; // Esto cambiará la URL de la página directamente
   }
 }
 

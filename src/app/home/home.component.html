@@ -1,0 +1,45 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <h3>Registro de escuelas</h3>
+    <mat-nav-list>
+      <mat-list-item routerLink="/home">Inicio</mat-list-item>
+      <mat-list-item routerLink="/tables">Tables</mat-list-item>
+      <mat-list-item routerLink="/estudiantes">Estudiantes</mat-list-item>
+      <mat-divider></mat-divider>
+      <h4>Auth Pages</h4>
+      <mat-list-item routerLink="/signup">Sign Up</mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content">
+    <div class="form-container">
+      <h2>Formulario de Registro de Escuelas</h2>
+      <form>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Nombre de la Escuela</mat-label>
+          <input matInput placeholder="Escribe el nombre" />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Dirección</mat-label>
+          <input matInput placeholder="Escribe la dirección" />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Ciudad</mat-label>
+          <input matInput placeholder="Escribe la ciudad" />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Estado</mat-label>
+          <input matInput placeholder="Escribe el estado" />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Código Postal</mat-label>
+          <input matInput placeholder="Escribe el código postal" />
+        </mat-form-field>
+        <div class="map-container">
+          <h3>Ubicación en el Mapa:</h3>
+          <!-- Aquí puedes integrar un mapa -->
+        </div>
+      </form>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

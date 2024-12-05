@@ -35,11 +35,16 @@ export class LoginComponent {
     this.authService.login(this.email, this.password).subscribe(
       (response) => {
         this.authService.saveToken(response.token);
+        this.onRegisterSuccess();
         alert('Login exitoso');
       },
       (error) => {
         alert('Error de autenticación');
       }
     );
+  }
+  onRegisterSuccess() {
+    // Redirige al login utilizando window.location
+    window.location.href = '/home'; // Esto cambiará la URL de la página directamente
   }
 }
