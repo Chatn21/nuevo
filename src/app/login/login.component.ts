@@ -25,8 +25,6 @@ import { RouterLinkActive } from '@angular/router';
     ReactiveFormsModule,
     MatButtonModule,
     CommonModule,
-    RouterLink,
-    RouterLinkActive,
   ]
 })
 export class LoginComponent {
@@ -48,7 +46,7 @@ export class LoginComponent {
     );
   }
   onRegisterSuccess() {
-    // Redirige al login utilizando window.location
-    window.location.href = '/home'; // Esto cambiará la URL de la página directamente
+
+    window.location.href = '/home';
   }
 }

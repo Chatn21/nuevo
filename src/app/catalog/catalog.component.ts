@@ -7,6 +7,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenav } from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { RouterModule } from '@angular/router';
+
 
 
 
@@ -21,6 +26,9 @@ import { CommonModule } from '@angular/common';
     MatCardModule,
     MatToolbarModule,
     CommonModule,
+    MatListModule,
+    MatSidenavModule,
+    RouterModule,
 
 
   ],
@@ -29,44 +37,45 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./catalog.component.scss'],
 })
 export class CatalogComponent implements OnInit {
-  catalog: any[] = [];
+  schools: any[] = [];
 
   constructor(private catalogService: CatalogService) {}
 
   ngOnInit(): void {
-    this.loadCatalog(1);
+    this.loadSchools();
   }
 
-  loadCatalog(page: number): void {
-    this.catalogService.getCatalog(page, 1).subscribe(
-      (response) => {
-        this.catalog = response;
+
+  loadSchools(): void {
+    this.catalogService.getSchools().subscribe({
+      next: (response) => {
+        this.schools = response;
       },
-      (error) => {
-        console.error('Error al cargar el catálogo', error);
-      }
-    );
+      error: (error) => {
+        console.error('Error al cargar el catálogo de escuelas', error);
+      },
+    });
   }
 
-  likeItem(id: number): void {
-    this.catalogService.likeItem(id).subscribe(
-      (response) => {
-        console.log('Like registrado:', response);
+
+  onLike(id: number): void {
+    this.catalogService.likeSchool(id).subscribe({
+      next: () => {
+        alert('¡Like registrado!');
+        this.loadSchools();
       },
-      (error) => {
-        console.error('Error al registrar el like', error);
-      }
-    );
+      error: (error) => console.error('Error al realizar Like', error),
+    });
   }
 
-  visitItem(id: number): void {
-    this.catalogService.visitItem(id).subscribe(
-      (response) => {
-        console.log('Visita registrada:', response);
+
+  onVisit(id: number): void {
+    this.catalogService.visitSchool(id).subscribe({
+      next: () => {
+        alert('¡Visit registrado!');
+        this.loadSchools();
       },
-      (error) => {
-        console.error('Error al registrar la visita', error);
-      }
-    );
+      error: (error) => console.error('Error al realizar Visit', error),
+    });
   }
 }

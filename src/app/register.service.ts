@@ -9,13 +9,13 @@ import { Observable } from 'rxjs';
 })
 export class RegisterService {
 
-  private apiUrl = 'http://localhost/pet/register'; // La URL de tu backend PHP
+  private apiUrl = 'http://localhost/pet/register';
 
   constructor(private http: HttpClient) {}
 
   registerUser(formData: any): Observable<any> {
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json', // Indicar que estamos enviando JSON
+      'Content-Type': 'application/json',
     });
 
     return this.http.post<any>(this.apiUrl, formData, { headers });

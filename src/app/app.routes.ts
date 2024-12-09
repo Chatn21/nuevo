@@ -6,13 +6,15 @@ import { AuthGuard } from './auth.guard.service';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { EstudiantesComponent } from './estudiantes/estudiantes.component';
+import { ListasComponent } from './listas/listas.component';
 
 export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent},
   { path: 'estudiantes', component: EstudiantesComponent},
-  { path: 'catalog', component: CatalogComponent, canActivate: [AuthGuard] },
+  {path: 'list', component:ListasComponent},
+  { path: 'catalog', component: CatalogComponent },
   { path: '**', redirectTo: 'register' },
 ];
 

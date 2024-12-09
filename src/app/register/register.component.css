@@ -32,7 +32,7 @@ button {
   margin-top: 10px;
 }
 
-/* Para ajustar el tamaño de los campos en dispositivos pequeños */
+
 @media (max-width: 600px) {
   .register-container {
     padding: 10px;

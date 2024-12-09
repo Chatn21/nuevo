@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegistroService } from '../registro.service.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -26,7 +27,8 @@ import { CommonModule } from '@angular/common';
     MatCardModule,
     MatButtonModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'

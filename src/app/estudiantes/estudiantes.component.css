@@ -1,0 +1,74 @@
+.layout {
+  height: 100vh;
+  display: flex;
+}
+
+.sidenav-container {
+  height: 100%;
+  display: flex;
+}
+
+.sidenav {
+  background-color: #344955;
+  color: #ffffff;
+  padding: 16px;
+  width: 250px;
+}
+
+.sidenav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 8px 0;
+  display: block;
+}
+
+.sidenav a:hover {
+  background-color: #4a6572;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+/* Contenedor principal para formularios */
+.form-container {
+  max-width: 600px;
+  margin: 16px auto;
+}
+
+/* Estilado para el formulario y card */
+mat-card {
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ffffff, #e0f7fa);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mat-form-field {
+  margin: 12px 0;
+}
+
+.full-width {
+  width: 100%;
+}
+
+button {
+  background-color: #f9aa33;
+  color: #ffffff;
+}
+
+button:hover {
+  background-color: #f57c00;
+}
+
+@media screen and (max-width: 768px) {
+  .sidenav {
+    display: none;
+  }
+
+  mat-sidenav-container {
+    flex-direction: column;
+  }
+
+  .form-container {
+    margin: 16px;
+    padding: 8px;
+  }
+}

@@ -1,1 +1,76 @@
-<p>estudiantes works!</p>
+<div class="layout">
+  <mat-sidenav-container class="sidenav-container">
+
+    <mat-sidenav #sidenav mode="side" opened class="sidenav">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/home">Inicio</a>
+        <a mat-list-item routerLink="/list">Listas de estudiantes</a>
+        <a mat-list-item routerLink="/login">Cerrar sesión</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+
+    <mat-sidenav-content>
+
+      <mat-toolbar color="primary">
+        <span>Formulario de Registro de Estudiantes</span>
+      </mat-toolbar>
+
+      <div class="form-container">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Registro de Estudiante</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <form [formGroup]="formulario" (ngSubmit)="guardarEstudiante()">
+
+              <mat-form-field class="full-width">
+                <mat-label>Escuela</mat-label>
+                <input matInput placeholder="Ingrese ID de la Escuela" formControlName="id_escuela" required>
+              </mat-form-field>
+
+
+              <mat-form-field class="full-width">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="Ingrese el nombre del estudiante" formControlName="nombre_alumno" required>
+              </mat-form-field>
+
+
+              <mat-form-field class="full-width">
+                <mat-label>Apellido</mat-label>
+                <input matInput placeholder="Ingrese el apellido del estudiante" formControlName="apellido_alumno" required>
+              </mat-form-field>
+
+
+              <mat-form-field class="full-width">
+                <mat-label>Teléfono</mat-label>
+                <input matInput placeholder="Ingrese el número de teléfono" formControlName="telefono" required>
+              </mat-form-field>
+
+
+              <mat-form-field class="full-width">
+                <mat-label>Dirección</mat-label>
+                <input matInput placeholder="Ingrese la dirección" formControlName="direccion">
+              </mat-form-field>
+
+
+              <mat-form-field class="full-width">
+                <mat-label>Datos del Tutor</mat-label>
+                <input matInput placeholder="Ingrese los datos del tutor" formControlName="datos_tutor">
+              </mat-form-field>
+
+
+              <mat-form-field class="full-width">
+                <mat-label>Curso Actual</mat-label>
+                <input matInput placeholder="Ingrese el curso actual" formControlName="curso_actual">
+              </mat-form-field>
+
+
+              <button mat-raised-button color="primary" type="submit">Registrar Estudiante</button>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

@@ -6,22 +6,22 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CatalogService {
-
-  private apiUrl = 'http://localhost/pet'; // Cambia esta URL según tu backend
+  private apiUrl = 'http://localhost/pet';
 
   constructor(private http: HttpClient) {}
 
-  getCatalog(page: number, option: number): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/catalog`, { page, option });
+
+  getSchools(page: number = 1): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/catalog`, { page });
   }
 
-  likeItem(id: number): Observable<any> {
-    return this.http.post(`${this.apiUrl}/like`, { id });
+  likeSchool(id: number): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/like`, { id });
   }
 
-  visitItem(id: number): Observable<any> {
-    return this.http.post(`${this.apiUrl}/visit`, { id });
+
+  visitSchool(id: number): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/visit`, { id });
   }
 }
-
 

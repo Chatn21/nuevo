@@ -1,6 +1,7 @@
+
 .layout {
-  display: flex;
   height: 100vh;
+  display: flex;
 }
 
 .sidenav-container {
@@ -8,11 +9,81 @@
 }
 
 .sidenav {
-  width: 250px;
-  background: #f4f4f4;
+  background-color: #344955;
+  color: #ffffff;
+  padding: 16px;
+}
+
+.sidenav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 8px 0;
+  display: block;
+}
+
+.sidenav a:hover {
+  background-color: #4a6572;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+/* Form styles */
+.form-container {
+  max-width: 600px;
+  margin: 32px auto;
+}
+
+mat-card {
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ffffff, #e0f7fa);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+mat-card-title {
+  color: #344955; /* Título oscuro */
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+mat-card-content {
+  padding: 16px;
+}
+
+.mat-form-field {
+  margin: 12px 0;
 }
 
 .full-width {
   width: 100%;
-  margin-bottom: 16px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background-color: #f9aa33;
+  color: #ffffff;
+}
+
+button:hover {
+  background-color: #f57c00;
+}
+
+
+@media screen and (max-width: 768px) {
+  .sidenav {
+    display: none;
+  }
+
+  mat-sidenav-container {
+    flex-direction: column;
+  }
+
+  .form-container {
+    margin: 16px;
+    padding: 8px;
+  }
 }

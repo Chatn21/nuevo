@@ -1,18 +1,18 @@
 .layout {
-  height: 100vh;
   display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .sidenav-container {
   height: 100%;
-  display: flex;
 }
 
 .sidenav {
+  width: 240px;
   background-color: #344955;
   color: #ffffff;
   padding: 16px;
-  width: 250px;
 }
 
 .sidenav a {
@@ -29,65 +29,17 @@
 }
 
 
-.catalog-container {
+.form-container {
+  margin: 32px auto;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  padding: 16px;
-}
-
-.catalog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 16px;
-}
-
-.catalog-item {
-  background: linear-gradient(135deg, #ffffff, #e0f7fa);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-}
-
-mat-card-title {
-  color: #344955;
-  font-weight: bold;
-  font-size: 1.2rem;
-  text-align: center;
-}
-
-mat-card-content {
-  padding: 16px;
-}
-
-.mat-form-field {
-  margin: 12px 0;
-}
-
-.full-width {
-  width: 100%;
-}
-
-mat-card-actions {
-  display: flex;
-  justify-content: center;
-}
-
-button {
-  background-color: #f9aa33;
-  color: #ffffff;
-}
-
-button:hover {
-  background-color: #f57c00;
-}
-
-
-.form-container {
   max-width: 600px;
-  margin: 32px auto;
 }
+
 
 mat-card {
+  margin: 20px;
+  padding: 20px;
   border-radius: 8px;
   background: linear-gradient(135deg, #ffffff, #e0f7fa);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -126,21 +78,40 @@ button:hover {
   background-color: #f57c00;
 }
 
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #344955;
+  color: white;
+}
+
+h1 {
+  color: #344955;
+}
+
+
 @media screen and (max-width: 768px) {
   .sidenav {
     display: none;
   }
 
-  mat-sidenav-container {
+  .sidenav-container {
     flex-direction: column;
   }
 
   .form-container {
     margin: 16px;
     padding: 8px;
-  }
-
-  .catalog-grid {
-    grid-template-columns: 1fr;
   }
 }

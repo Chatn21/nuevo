@@ -33,7 +33,7 @@ export class RegisterComponent {
   errorMessage: string = '';
 
   constructor(private registerService: RegisterService, private fb: FormBuilder) {
-    // Inicializar el formulario con validaciones
+
     this.registerForm = this.fb.group({
       nombre: ['', [Validators.required]],
       correo: ['', [Validators.required, Validators.email]],
@@ -50,7 +50,7 @@ export class RegisterComponent {
 
     const formData = this.registerForm.value;
 
-    // Llamar al servicio para registrar el usuario
+
     this.registerService.registerUser(formData).subscribe({
       next: (response) => {
         console.log('Usuario registrado:', response);
@@ -65,8 +65,8 @@ export class RegisterComponent {
     });
   }
   onRegisterSuccess() {
-    // Redirige al login utilizando window.location
-    window.location.href = '/login'; // Esto cambiará la URL de la página directamente
+
+    window.location.href = '/login';
   }
 }
 

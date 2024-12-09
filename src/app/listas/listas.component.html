@@ -1,0 +1,40 @@
+
+<div class="layout">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" opened class="sidenav">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/home">Inicio</a>
+        <a mat-list-item routerLink="/estudiantes">Estudiantes</a>
+        <a mat-list-item routerLink="/login">Cerrar sesión</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div>
+        <h1>Lista de Estudiantes</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Teléfono</th>
+              <th>Dirección</th>
+              <th>Curso Actual</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of students">
+              <td>{{ student.id }}</td>
+              <td>{{ student.nombre }}</td>
+              <td>{{ student.apellido }}</td>
+              <td>{{ student.telefono }}</td>
+              <td>{{ student.direccion }}</td>
+              <td>{{ student.curso_actual }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
