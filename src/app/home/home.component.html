@@ -1,45 +1,59 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav mode="side" opened class="sidenav">
-    <h3>Registro de escuelas</h3>
-    <mat-nav-list>
-      <mat-list-item routerLink="/home">Inicio</mat-list-item>
-      <mat-list-item routerLink="/tables">Tables</mat-list-item>
-      <mat-list-item routerLink="/estudiantes">Estudiantes</mat-list-item>
-      <mat-divider></mat-divider>
-      <h4>Auth Pages</h4>
-      <mat-list-item routerLink="/signup">Sign Up</mat-list-item>
-    </mat-nav-list>
-  </mat-sidenav>
+<div class="layout">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" opened class="sidenav">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/tables">Tables</a>
+        <a mat-list-item routerLink="/estudiantes">Estudiantes</a>
+        <a mat-list-item routerLink="/register">Cerrar sesion </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <form [formGroup]="registroForm" (ngSubmit)="onSubmit()" class="form-container">
+        <mat-card>
+          <mat-card-title>Formulario de Registro de Escuelas</mat-card-title>
+          <mat-card-content>
+            <div>
+              <mat-form-field class="full-width">
+                <mat-label>Nombre de la Escuela</mat-label>
+                <input matInput formControlName="nombre_escuela">
+              </mat-form-field>
 
-  <mat-sidenav-content class="content">
-    <div class="form-container">
-      <h2>Formulario de Registro de Escuelas</h2>
-      <form>
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Nombre de la Escuela</mat-label>
-          <input matInput placeholder="Escribe el nombre" />
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Dirección</mat-label>
-          <input matInput placeholder="Escribe la dirección" />
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Ciudad</mat-label>
-          <input matInput placeholder="Escribe la ciudad" />
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Estado</mat-label>
-          <input matInput placeholder="Escribe el estado" />
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Código Postal</mat-label>
-          <input matInput placeholder="Escribe el código postal" />
-        </mat-form-field>
-        <div class="map-container">
-          <h3>Ubicación en el Mapa:</h3>
-          <!-- Aquí puedes integrar un mapa -->
-        </div>
-      </form>
-    </div>
+              <mat-form-field class="full-width">
+                <mat-label>Dirección</mat-label>
+                <input matInput formControlName="direccion">
+              </mat-form-field>
+
+              <mat-form-field class="full-width">
+                <mat-label>Teléfono</mat-label>
+                <input matInput formControlName="telefono">
+              </mat-form-field>
+
+              <mat-form-field class="full-width">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+              </mat-form-field>
+
+              <mat-form-field class="full-width">
+                <mat-label>Ciudad</mat-label>
+                <input matInput formControlName="ciudad">
+              </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <mat-label>Estado</mat-label>
+              <input matInput formControlName="estado">
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <mat-label>Código Postal</mat-label>
+              <input matInput formControlName="codigoPostal">
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit">Registrar</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
   </mat-sidenav-content>
 </mat-sidenav-container>
+</div>

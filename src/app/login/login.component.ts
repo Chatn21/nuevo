@@ -7,6 +7,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { RouterLinkActive } from '@angular/router';
 
 
 @Component({
@@ -23,6 +25,8 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     MatButtonModule,
     CommonModule,
+    RouterLink,
+    RouterLinkActive,
   ]
 })
 export class LoginComponent {
